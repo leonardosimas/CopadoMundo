@@ -1,0 +1,340 @@
+{
+    "matches": [
+      {
+        "id": 1,
+        "country1": "Qatar",
+        "country2": "Equador",
+        "dateOfGame": "2022-11-20",
+        "matchgame" : "A"
+      },
+      {
+        "id": 2,
+        "country1": "Senegal",
+        "country2": "Holanda",
+        "dateOfGame": "2022-11-21",
+        "matchgame" : "A"
+      },
+      {
+        "id": 3,
+        "country1": "Inglaterra",
+        "country2": "Irã",
+        "dateOfGame": "2022-11-21",
+        "matchgame" : "B"
+      },
+      {
+        "id": 4,
+        "country1": "Estados Unidos",
+        "country2": "País de Gales",
+        "dateOfGame": "2022-11-21",
+        "matchgame" : "B"
+      },
+      {
+        "id": 5,
+        "country1": "França",
+        "country2": "Austrália",
+        "dateOfGame": "2022-11-22",
+        "matchgame" : "D"
+      },
+      {
+        "id": 6,
+        "country1": "Dinamarca",
+        "country2": "Tunísia",
+        "dateOfGame": "2022-11-22",
+        "matchgame" : "D"
+      },
+      {
+        "id": 7,
+        "country1": "México",
+        "country2": "Polônia",
+        "dateOfGame": "2022-11-22",
+        "matchgame" : "C"
+      },
+      {
+        "id": 8,
+        "country1": "Argentina",
+        "country2": "Arábia Saudita",
+        "dateOfGame": "2022-11-22",
+        "matchgame" : "C"
+      },
+      {
+        "id": 9,
+        "country1": "Bélgica",
+        "country2": "Canadá",
+        "dateOfGame": "2022-11-23",
+        "matchgame" : "F"
+      },
+      {
+        "id": 10,
+        "country1": "Espanha",
+        "country2": "Costa Rica",
+        "dateOfGame": "2022-11-23",
+        "matchgame" : "E"
+      },
+      {
+        "id": 11,
+        "country1": "Alemanha",
+        "country2": "Japão",
+        "dateOfGame": "2022-11-23",
+        "matchgame" : "E"
+      },
+      {
+        "id": 12,
+        "country1": "Marrocos",
+        "country2": "Croácia",
+        "dateOfGame": "2022-11-22",
+        "matchgame" : "F"
+      },
+      {
+        "id": 13,
+        "country1": "Suiça",
+        "country2": "Camarões",
+        "dateOfGame": "2022-11-24",
+        "matchgame" : "G"
+      },
+      {
+        "id": 14,
+        "country1": "Uruguai",
+        "country2": "Coréia do Sul",
+        "dateOfGame": "2022-11-24",
+        "matchgame" : "H"
+      },
+      {
+        "id": 15,
+        "country1": "Portugal",
+        "country2": "Gana",
+        "dateOfGame": "2022-11-24",
+        "matchgame" : "H"
+      },
+      {
+        "id": 16,
+        "country1": "Brasil",
+        "country2": "Sérvia",
+        "dateOfGame": "2022-11-24",
+        "matchgame" : "G"
+      },
+      {
+        "id": 17,
+        "country1": "País de Gales",
+        "country2": "Irã",
+        "dateOfGame": "2022-11-25",
+        "matchgame" : "B"
+      },
+      {
+        "id": 18,
+        "country1": "Qatar",
+        "country2": "Senegal",
+        "dateOfGame": "2022-11-25",
+        "matchgame" : "A"
+      },
+      {
+        "id": 19,
+        "country1": "Holanda",
+        "country2": "Equador",
+        "dateOfGame": "2022-11-25",
+        "matchgame" : "A"
+      },
+      {
+        "id": 20,
+        "country1": "Inglaterra",
+        "country2": "Estados Unidos",
+        "dateOfGame": "2022-11-25",
+        "matchgame" : "B"
+      },
+      {
+        "id": 21,
+        "country1": "Tunísia",
+        "country2": "Austrália",
+        "dateOfGame": "2022-11-26",
+        "matchgame" : "D"
+      },
+      {
+        "id": 22,
+        "country1": "Polônia",
+        "country2": "Arábia Saudita",
+        "dateOfGame": "2022-11-26",
+        "matchgame" : "C"
+      },
+      {
+        "id": 23,
+        "country1": "França",
+        "country2": "Dinamarca",
+        "dateOfGame": "2022-11-26",
+        "matchgame" : "D"
+      },
+      {
+        "id": 24,
+        "country1": "Argentina",
+        "country2": "México",
+        "dateOfGame": "2022-11-26",
+        "matchgame" : "C"
+      },
+      {
+        "id": 25,
+        "country1": "Japão",
+        "country2": "Costa Rica",
+        "dateOfGame": "2022-11-27",
+        "matchgame" : "E"
+      },
+      {
+        "id": 26,
+        "country1": "Bélgica",
+        "country2": "Marrocos",
+        "dateOfGame": "2022-11-27",
+        "matchgame" : "F"
+      },
+      {
+        "id": 27,
+        "country1": "Croácia",
+        "country2": "Canadá",
+        "dateOfGame": "2022-11-27",
+        "matchgame" : "F"
+      },
+      {
+        "id": 28,
+        "country1": "Espanha",
+        "country2": "Alemanha",
+        "dateOfGame": "2022-11-27",
+        "matchgame" : "E"
+      },
+      {
+        "id": 29,
+        "country1": "Camarões",
+        "country2": "Sérvia",
+        "dateOfGame": "2022-11-28",
+        "matchgame" : "G"
+      },
+      {
+        "id": 30,
+        "country1": "Coréia do Sul",
+        "country2": "Gana",
+        "dateOfGame": "2022-11-28",
+        "matchgame" : "H"
+      },
+      {
+        "id": 31,
+        "country1": "Brasil",
+        "country2": "Suíca",
+        "dateOfGame": "2022-11-28",
+        "matchgame" : "G"
+      },
+      {
+        "id": 32,
+        "country1": "Portugal",
+        "country2": "Uruguai",
+        "dateOfGame": "2022-11-28",
+        "matchgame" : "H"
+      },
+      {
+        "id": 33,
+        "country1": "País de Gales",
+        "country2": "Inglaterra",
+        "dateOfGame": "2022-11-29",
+        "matchgame" : "B"
+      },
+      {
+        "id": 34,
+        "country1": "Irã",
+        "country2": "Estados Unidos",
+        "dateOfGame": "2022-11-29",
+        "matchgame" : "B"
+      },
+      {
+        "id": 35,
+        "country1": "Equador",
+        "country2": "Senegal",
+        "dateOfGame": "2022-11-29",
+        "matchgame" : "A"
+      },
+      {
+        "id": 36,
+        "country1": "Holanda",
+        "country2": "Qatar",
+        "dateOfGame": "2022-11-29",
+        "matchgame" : "A"
+      },
+      {
+        "id": 37,
+        "country1": "Austrália",
+        "country2": "Dinamarca",
+        "dateOfGame": "2022-11-30",
+        "matchgame" : "D"
+      },
+      {
+        "id": 38,
+        "country1": "Tunísia",
+        "country2": "França",
+        "dateOfGame": "2022-11-30",
+        "matchgame" : "D"
+      },
+      {
+        "id": 39,
+        "country1": "Polônia",
+        "country2": "Argentina",
+        "dateOfGame": "2022-11-30",
+        "matchgame" : "C"
+      },
+      {
+        "id": 40,
+        "country1": "Arábia Saudita",
+        "country2": "México",
+        "dateOfGame": "2022-11-30",
+        "matchgame" : "C"
+      },
+      {
+        "id": 41,
+        "country1": "Croácia",
+        "country2": "Bélgica",
+        "dateOfGame": "2022-12-01",
+        "matchgame" : "F"
+      },
+      {
+        "id": 42,
+        "country1": "Canadá",
+        "country2": "Marrocos",
+        "dateOfGame": "2022-12-01",
+        "matchgame" : "F"
+      },
+      {
+        "id": 43,
+        "country1": "Japão",
+        "country2": "Espanha",
+        "dateOfGame": "2022-12-01",
+        "matchgame" : "E"
+      },
+      {
+        "id": 44,
+        "country1": "Costa Rica",
+        "country2": "Alemanha",
+        "dateOfGame": "2022-12-01",
+        "matchgame" : "E"
+      },
+      {
+        "id": 45,
+        "country1": "Gana",
+        "country2": "Uruguai",
+        "dateOfGame": "2022-12-02",
+        "matchgame" : "H"
+      },
+      {
+        "id": 46,
+        "country1": "Coréia do Sul",
+        "country2": "Portugal",
+        "dateOfGame": "2022-12-02",
+        "matchgame" : "H"
+      },
+      {
+        "id": 47,
+        "country1": "Sérvia",
+        "country2": "Suíça",
+        "dateOfGame": "2022-12-02",
+        "matchgame" : "G"
+      },
+      {
+        "id": 48,
+        "country1": "Camarões",
+        "country2": "Brasil",
+        "dateOfGame": "2022-12-02",
+        "matchgame" : "G"
+      }
+    ]
+  }
