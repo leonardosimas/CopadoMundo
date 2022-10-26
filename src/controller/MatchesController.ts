@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { MatchesBusiness } from "../business/MatchesBusiness";
 import { BaseError } from "../errors/BaseError";
-import { IUpdateMatchesInputDTO } from "../models/Matches";
+import { IUpdateMatchesInputDTO, IUpdateMatchStatusInputDTO, STATUS } from "../models/Matches";
 
 
 export class MatchesController {
@@ -30,13 +30,15 @@ export class MatchesController {
         public updateMatches = async (req: Request, res: Response) => {
             try {
               const token = req.headers.authorization as string
-              const id = req.params.id as string  
+              const id = req.params.id as string
+              const matchstatus = req.body.matchstatus as STATUS  
               const scorecountry1 = req.body.scorecountry1
               const scorecountry2 = req.body.scorecountry2
               
               const input: IUpdateMatchesInputDTO = {
                 token,
                 id,
+                matchstatus,
                 scorecountry1,
                 scorecountry2
               };
@@ -53,6 +55,38 @@ export class MatchesController {
             }
           };
 
+        //******************************************************************/
+        //***********   MÉTODO - ATUALIZAR STATUS DO JOGO   ****************/
+        //******************************************************************/
+
+        public updateStatus = async (req: Request, res: Response) => {
+          try {
+            const token = req.headers.authorization as string
+            const id = req.params.id as string  
+            const matchstatus = req.body.matchstatus as STATUS
+            
+            const input: IUpdateMatchStatusInputDTO = {
+              token,
+              id,
+              matchstatus
+            };
+      
+            
+            const response = await this.matchesBusiness.updateStatus(input);
+            res.status(201).send(response);
+          } catch (error: any) {
+            if (error instanceof BaseError) {
+              return res.status(error.statusCode).send({ message: error.message });
+            }
+      
+            res.status(500).send({ message: error.message });
+          }
+        };
+        
+
+        //******************************************************************/
+        //****************   MÉTODO - BUSCAR OS JOGOS   ********************/
+        //******************************************************************/
 
           public getAllMatches = async (req: Request, res: Response) => {
             try {

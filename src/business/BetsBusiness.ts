@@ -9,6 +9,10 @@ import { RequestError } from "../errors/RequestError";
 import { UnauthorizedError } from "../errors/UnauthorizedError";
 import { Bets, IBetInputDTO, IBetOutputDTO } from "../models/Bets";
 import { IdGenerator } from "../services/IdGenerator";
+import * as moment from 'moment';
+import 'moment/locale/pt-br';
+import { STATUS } from "../models/Matches";
+
 
 export class BetsBusiness {
   constructor(
@@ -137,11 +141,11 @@ export class BetsBusiness {
     //CHECAGEM DOS VALORES, SÓ PODEM VIR COMO NÚMEROS OU UNDEFINED
     //****************************************************************/
 
-      if (typeof betgame1_01 !== "number" || undefined || null ) {
-        throw new RequestError(
-          "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-        );
-      }
+      // if (typeof betgame1_01 !== "number" || undefined || null ) {
+      //   throw new RequestError(
+      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
+      //   );
+      // }
 
       // if (typeof betgame1_02 !== "number" || undefined) {
       //   throw new RequestError(
@@ -833,10 +837,244 @@ export class BetsBusiness {
     );
 
     //Checagem importante para verificar se já existe um palpite criado pelo usuário no bolão.
-    const isBetExists: any = await this.betsDatabase.findByUserIdAndGroupId(
-      user_id,
-      group_id
-    );
+    const isBetExists: any = await this.betsDatabase.findByUserIdAndGroupId(user_id, group_id);
+
+    //Checagem do STATUS para saber se a partida está ENCERRADA e bloquear novas apostas e atualizações.
+
+    const checkStatus: any = await this.matchesDatabase.fetchAllMatches() 
+    
+    const filterStatus = checkStatus.filter((result: any) => {
+      return result.matchstatus === STATUS.CLOSED 
+    })
+
+    for (let k = 0 ; k < filterStatus.length ; k++) {
+      
+      switch (filterStatus[k].id) {
+        case '01':
+          if (bet.getBet01_1() || bet.getBet01_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '02':
+          if (bet.getBet02_1() || bet.getBet02_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '03':
+          if (bet.getBet03_1() || bet.getBet03_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '04':
+          if (bet.getBet04_1() || bet.getBet04_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '05':
+          if (bet.getBet05_1() || bet.getBet05_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '06':
+          if (bet.getBet06_1() || bet.getBet06_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '07':
+          if (bet.getBet07_1() || bet.getBet07_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '08':
+          if (bet.getBet08_1() || bet.getBet08_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '09':
+          if (bet.getBet09_1() || bet.getBet09_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '10':
+          if (bet.getBet10_1() || bet.getBet10_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '11':
+          if (bet.getBet11_1() || bet.getBet11_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '12':
+          if (bet.getBet12_1() || bet.getBet12_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '13':
+          if (bet.getBet13_1() || bet.getBet13_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '14':
+          if (bet.getBet14_1() || bet.getBet14_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '15':
+          if (bet.getBet15_1() || bet.getBet15_2() && filterStatus[k].matchstatus === STATUS.CLOSED ) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '16':
+          if (bet.getBet16_1() || bet.getBet16_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '17':
+          if (bet.getBet17_1() || bet.getBet17_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '18':
+          if (bet.getBet18_1() || bet.getBet18_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '19':
+          if (bet.getBet19_1() || bet.getBet19_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '20':
+          if (bet.getBet20_1() || bet.getBet20_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          }
+        case '21':
+          if (bet.getBet21_1() || bet.getBet21_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '22':
+          if (bet.getBet22_1() || bet.getBet22_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '23':
+          if (bet.getBet23_1() || bet.getBet23_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '24':
+          if (bet.getBet24_1() || bet.getBet24_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '25':
+          if (bet.getBet25_1() || bet.getBet25_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '26':
+          if (bet.getBet26_1() || bet.getBet26_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '27':
+          if (bet.getBet27_1() || bet.getBet27_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '28':
+          if (bet.getBet28_1() || bet.getBet28_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '29':
+          if (bet.getBet29_1() || bet.getBet29_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '30':
+          if (bet.getBet30_1() || bet.getBet30_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '31':
+          if (bet.getBet31_1() || bet.getBet31_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '32':
+          if (bet.getBet32_1() || bet.getBet32_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '33':
+          if (bet.getBet33_1() || bet.getBet33_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '34':
+          if (bet.getBet34_1() || bet.getBet34_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '35':
+          if (bet.getBet35_1() || bet.getBet35_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '36':
+          if (bet.getBet36_1() || bet.getBet36_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '37':
+          if (bet.getBet37_1() || bet.getBet37_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '38':
+          if (bet.getBet38_1() || bet.getBet38_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '39':
+          if (bet.getBet39_1() || bet.getBet39_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '40':
+          if (bet.getBet40_1() || bet.getBet40_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '41':
+          if (bet.getBet41_1() || bet.getBet41_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '42':
+          if (bet.getBet42_1() || bet.getBet42_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '43':
+          if (bet.getBet43_1() || bet.getBet43_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '44':
+          if (bet.getBet44_1() || bet.getBet44_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '45':
+          if (bet.getBet45_1() || bet.getBet45_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '46':
+          if (bet.getBet46_1() || bet.getBet46_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '47':
+          if (bet.getBet47_1() || bet.getBet47_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+        case '48':
+          if (bet.getBet48_1() || bet.getBet48_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
+            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            break
+          }
+
+      }
+
+    }
+
 
     //Fazemos a checagem para saber se o usuário já criou o palpite para esse bolão.
     //Caso negativo, instanciamos o palipte, senão fazemos o Update.
@@ -856,6 +1094,11 @@ export class BetsBusiness {
       return response;
     }
   };
+
+
+  // ********************************************** //
+  // ********   BUSCAR APOSTAS POR GRUPO   ******** //
+  // ********************************************** //
 
   public fetchBetsofGroup = async (id:string) => {
 
@@ -886,7 +1129,7 @@ export class BetsBusiness {
       for (let j = 0; j < matchesResult.length ; j++) {
       
         //Checagem para saber quem foi o vencedor do confronto
-        if (matchesResult[j].scorecountry1 > matchesResult[j].scorecountry2) {
+        if (matchesResult[j].scorecountry1 > matchesResult[j].scorecountry2 && matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null) {
           
           //Checagem para saber quem se a sua aposta corresponde com o vencedor do confronto
           if (result[i]['betgame' + (j+1) + '_01'] > result[i]['betgame' + (j+1) + '_02']) {
@@ -923,7 +1166,7 @@ export class BetsBusiness {
           }
 
 
-        } else if (matchesResult[j].scorecountry1 < matchesResult[j].scorecountry2) {
+        } else if (matchesResult[j].scorecountry1 < matchesResult[j].scorecountry2 && matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null) {
           //RESULTADOS VENCEDOR PAÍS 2 *** LÓGICA ESTÁ CORRETA E CHECADA
           console.log(`Vencedor country2: Jogo ${j+1} , ${matchesResult[j].country2}`)
 
@@ -949,7 +1192,7 @@ export class BetsBusiness {
           } else {
 
             //Checagem para dar valor apenas a pontuação completa.
-            if (result[i]['betgame' + (j+1) + '_01'] === null   || result[i]['betgame' + (j+1) + '_02'] === null) {
+            if ((result[i]['betgame' + (j+1) + '_01'] === null || undefined) || (result[i]['betgame' + (j+1) + '_02'] === null || undefined)) {
               //Não posso dar valor para um jogo que tenha um campo undefined, não preenchido.
               // console.log("Este valor não foi preenchido.") 
             } else {
@@ -975,14 +1218,14 @@ export class BetsBusiness {
             if (result[i]['betgame' + (j+1) + '_01'] === result[i]['betgame' + (j+1) + '_02']) {
 
               console.log("Resultado REAL foi empate, APOSTA do jogador foi EMPATE !")
-
-                if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] && matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']) {
-                  jogadorpontos.push(15)
-                } else {
-                  jogadorpontos.push(5)
+                if (matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null) {
+                  if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] && matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']) {
+                    jogadorpontos.push(15)
+                  } else {
+                    jogadorpontos.push(5)
+                  }
                 }
-
-            } else {
+            } else if (matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null){
                 if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] || matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']){
                   jogadorpontos.push(3)
                 }

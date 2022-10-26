@@ -41,7 +41,8 @@ export class Migrations extends BaseDatabase {
             scorecountry1 INT(2),
             scorecountry2 INT(2),
             dateOfGame DATE NOT NULL,
-            matchgame ENUM('A' , 'B' , 'C', 'D' , 'E' , 'F', 'G', 'H') NOT NULL
+            matchgame ENUM('A' , 'B' , 'C', 'D' , 'E' , 'F', 'G', 'H') NOT NULL,
+            matchstatus ENUM('OPEN', 'CLOSED') DEFAULT 'OPEN'
         );
     `)
     }
