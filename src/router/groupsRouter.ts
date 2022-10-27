@@ -10,3 +10,6 @@ groupsRouter.get("/search", groupsController.getGroupsByName);
 //***** POST ENDPOINTS *****/
 groupsRouter.post("/createGroup", groupsController.createGroup)
 
+//***** DELETE ENDPOINTS *****/
+groupsRouter.delete("/delete/:id", groupsController.deleteGroup)
+

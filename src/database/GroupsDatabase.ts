@@ -48,9 +48,16 @@ export class GroupsDatabase extends BaseDatabase {
   };
 
   public deleteGroup = async (delGroup: string): Promise<void> => {
-    console.log("Estou dentro do GroupsDatabase => user_id: ",delGroup)
+    
     await this.getConnection()(GroupsDatabase.TABLE_GROUPS)
     .delete()
     .where({user_id: delGroup})
+  }
+
+  public deleteGroupById = async (delGroup: string): Promise<void> => {
+    
+    await this.getConnection()(GroupsDatabase.TABLE_GROUPS)
+    .delete()
+    .where({id: delGroup})
   }
 }

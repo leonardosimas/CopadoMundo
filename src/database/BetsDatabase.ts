@@ -267,12 +267,17 @@ export class BetsDatabase extends BaseDatabase {
     }
 
     public deleteBets = async (delBets: string): Promise<void> => {
-        console.log(delBets)
+        
         await this.getConnection()(BetsDatabase.TABLE_BETS)
         .delete()
         .where({user_id: delBets})
-      }
+    }
 
-    
+    public deleteBetsByGroupId = async (delBets: string): Promise<void> => {
+        
+        await this.getConnection()(BetsDatabase.TABLE_BETS)
+        .delete()
+        .where({group_id: delBets})
+    }
 
 }

@@ -141,11 +141,6 @@ export class BetsBusiness {
     //CHECAGEM DOS VALORES, SÓ PODEM VIR COMO NÚMEROS OU UNDEFINED
     //****************************************************************/
 
-    // console.log(typeof betgame7_01)
-    console.log(!betgame7_02)
-    console.log(typeof betgame7_02 === "number")
-    console.log(betgame7_02)
-    
     if (typeof (betgame1_01 || betgame1_02) !== "number") {
       if ((betgame1_01 || betgame1_02) !== undefined) {
         throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
@@ -886,11 +881,9 @@ export class BetsBusiness {
 
     //Vamos pegar todos os resultados dos jogos na tabela Matches
     const matchesResult: any = await this.matchesDatabase.fetchAllMatches()
-    // console.log(matchesResult)
     
     //Agora vamos pegar as apostas por GRUPO
     const result:any = await this.betsDatabase.fetchGroupBets(id)
-    // console.log(result)
         if (result.length === 0) {
             throw new NotFoundError ("Grupo não encontrado.");
         }
@@ -902,8 +895,6 @@ export class BetsBusiness {
     let jogadorpontos: Array<number> = []
     let showResponse: Array<Object> = []
 
-    // console.log(result[0]['betgame' + (1) + '_01']) // Formato correto
-    
     //Primeiro FOR vai garantir que passe por todas as apostas do grupo
     for (let i = 0; i < result.length ; i ++) {
 
@@ -917,8 +908,6 @@ export class BetsBusiness {
           if (result[i]['betgame' + (j+1) + '_01'] > result[i]['betgame' + (j+1) + '_02']) {
           
             //RESULTADOS VENCEDOR PAÍS 1 *** LÓGICA ESTÁ CORRETA E CHECADA
-            console.log(`Vencedor country1: Jogo ${j+1} , ${matchesResult[j].country1}`)
-            
             if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] && matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']) {
               jogadorpontos.push(15)
             } else if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] && matchesResult[j].scorecountry2 !== result[i]['betgame' + (j+1) + '_02']) {
@@ -950,8 +939,6 @@ export class BetsBusiness {
 
         } else if (matchesResult[j].scorecountry1 < matchesResult[j].scorecountry2 && matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null) {
           //RESULTADOS VENCEDOR PAÍS 2 *** LÓGICA ESTÁ CORRETA E CHECADA
-          console.log(`Vencedor country2: Jogo ${j+1} , ${matchesResult[j].country2}`)
-
           //Checagem para saber quem se a sua aposta corresponde com o vencedor do confronto
           if (result[i]['betgame' + (j+1) + '_01'] < result[i]['betgame' + (j+1) + '_02']) {
 
@@ -976,7 +963,7 @@ export class BetsBusiness {
             //Checagem para dar valor apenas a pontuação completa.
             if ((result[i]['betgame' + (j+1) + '_01'] === null || undefined) || (result[i]['betgame' + (j+1) + '_02'] === null || undefined)) {
               //Não posso dar valor para um jogo que tenha um campo undefined, não preenchido.
-              // console.log("Este valor não foi preenchido.") 
+              
             } else {
               if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] || matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']) {
                 jogadorpontos.push(3)
@@ -987,19 +974,16 @@ export class BetsBusiness {
 
         } else {
           //RESULTADOS DE EMPATE
-          console.log(`Empate jogo: ${j+1}`)
-
+          
           //Não posso dar valor para um jogo que tenha um campo undefined, não preenchido. 
           if (result[i]['betgame' + (j+1) + '_01'] === null   || result[i]['betgame' + (j+1) + '_02'] === null) {
             //Não posso dar valor para um jogo que tenha um campo undefined, não preenchido.
-            // console.log("Este valor não foi preenchido.") 
 
           } else {
 
             //Checagem para saber quem se a sua aposta deu empate
             if (result[i]['betgame' + (j+1) + '_01'] === result[i]['betgame' + (j+1) + '_02']) {
 
-              console.log("Resultado REAL foi empate, APOSTA do jogador foi EMPATE !")
                 if (matchesResult[j].scorecountry1 !== null && matchesResult[j].scorecountry2 !== null) {
                   if (matchesResult[j].scorecountry1 === result[i]['betgame' + (j+1) + '_01'] && matchesResult[j].scorecountry2 === result[i]['betgame' + (j+1) + '_02']) {
                     jogadorpontos.push(15)
@@ -1016,9 +1000,7 @@ export class BetsBusiness {
         }
       }
 
-      console.log("Pontos do jogador:" , jogadorpontos)
       let totaldepontos = jogadorpontos.reduce((total, numero) => total + numero, 0);
-      console.log(totaldepontos)
       
       showResponse.push({Grupo: result[i].groupsname, ID: result[i].id ,Nome: result[i].name, Apelido: result[i].nickname, Pontos: totaldepontos})
 

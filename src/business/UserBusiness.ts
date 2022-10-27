@@ -177,8 +177,8 @@ export class UserBusiness {
         }
 
         const isUserExists: any = await this.userDatabase.findById(user_id)
-        console.log(isUserExists)
-        if (isUserExists.length < 0) {
+        
+        if (!isUserExists) {
             throw new NotFoundError ("O usuário não foi encontrado.")
         }
 
