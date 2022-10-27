@@ -73,7 +73,7 @@ Criar seu usuário e o seu grupo e dar os seus palpites.
 
 5 - Criar a documentação via POSTMAN.
 
-6 - Criar um endpoint de DELETE para o ADMIN, verificar se existem mensagens ofensivas, políticas, discursos de ódio e/ou preconceitos, criadas em nomes de usuários, grupos ou descrições.
+6 - Criar um endpoint de DELETE para o ADMIN, para remover usuários ou grupos, que existirem mensagens ofensivas, políticas, discursos de ódio e/ou preconceitos.
 
 
 
