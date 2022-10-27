@@ -58,3 +58,12 @@ export interface ICreateGroupOutputDTO {
     message: string,
     groupsname: string
 }
+
+// export interface IDeleteGroupInputDTO {
+//     token: string,
+//     user_id: string
+// }
+
+export interface IDeleteGroupOutputDTO {
+    message: string,
+}

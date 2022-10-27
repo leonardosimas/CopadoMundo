@@ -141,582 +141,305 @@ export class BetsBusiness {
     //CHECAGEM DOS VALORES, SÓ PODEM VIR COMO NÚMEROS OU UNDEFINED
     //****************************************************************/
 
-      // if (typeof betgame1_01 !== "number" || undefined || null ) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame1_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame2_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame2_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame3_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame3_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-
-      // }
-
-      // if (typeof betgame4_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame4_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame5_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame5_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame6_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame6_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame7_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame7_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame8_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame8_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame9_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame9_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame10_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame10_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame11_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame11_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame12_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame12_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame13_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame13_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame14_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame14_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame15_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame15_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame16_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame16_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame17_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame17_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame18_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame18_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame19_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame19_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame20_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame20_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame21_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame21_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame22_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame22_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame23_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame23_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame24_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame24_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame25_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame25_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame26_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame26_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame27_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame27_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame28_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame28_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame29_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame29_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame30_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame30_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame31_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame31_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame32_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame32_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame33_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame33_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame34_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame34_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame35_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame35_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame36_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame36_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame37_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame37_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame38_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame38_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame39_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame39_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame40_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame40_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame41_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame41_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame42_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame42_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame43_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame43_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame44_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame44_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame45_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame45_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame46_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame46_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame47_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame47_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame48_01 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
-
-      // if (typeof betgame48_02 !== "number" || undefined) {
-      //   throw new RequestError(
-      //     "Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor."
-      //   );
-      // }
+    // console.log(typeof betgame7_01)
+    console.log(!betgame7_02)
+    console.log(typeof betgame7_02 === "number")
+    console.log(betgame7_02)
+    
+    if (typeof (betgame1_01 || betgame1_02) !== "number") {
+      if ((betgame1_01 || betgame1_02) !== undefined) {
+        throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+      }
+    } 
+    
+    if (typeof (betgame2_01 || betgame2_02) !== "number") {
+      if ((betgame2_01 || betgame2_02) !== undefined) {
+        throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+      }
+    }
+
+      if (typeof (betgame3_01 || betgame3_02) !== "number") {
+        if ((betgame3_01 || betgame3_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame4_01 || betgame4_02) !== "number") {
+        if ((betgame4_01 || betgame4_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+
+      if (typeof (betgame5_01 || betgame5_02) !== "number") {
+        if ((betgame5_01 || betgame5_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame6_01 || betgame6_02) !== "number") {
+        if ((betgame6_01 || betgame6_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame7_01 || betgame7_02) !== "number") {
+        if ((betgame7_01 || betgame7_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame8_01 || betgame8_02) !== "number") {
+        if ((betgame8_01 || betgame8_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame9_01 || betgame9_02) !== "number") {
+        if ((betgame9_01 || betgame9_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame10_01 || betgame10_02) !== "number") {
+        if ((betgame10_01 || betgame10_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+
+      if (typeof (betgame11_01 || betgame11_02) !== "number") {
+        if ((betgame11_01 || betgame11_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame12_01 || betgame12_02) !== "number") {
+        if ((betgame12_01 || betgame12_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame13_01 || betgame13_02) !== "number") {
+        if ((betgame13_01 || betgame13_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame14_01 || betgame14_02) !== "number") {
+        if ((betgame14_01 || betgame14_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame15_01 || betgame15_02) !== "number") {
+        if ((betgame15_01 || betgame15_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame16_01 || betgame16_02) !== "number") {
+        if ((betgame16_01 || betgame16_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame17_01 || betgame17_02) !== "number") {
+        if ((betgame17_01 || betgame17_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame18_01 || betgame18_02) !== "number") {
+        if ((betgame18_01 || betgame18_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame19_01 || betgame19_02) !== "number") {
+        if ((betgame19_01 || betgame19_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame20_01 || betgame20_02) !== "number") {
+        if ((betgame20_01 || betgame20_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame21_01 || betgame21_02) !== "number") {
+        if ((betgame21_01 || betgame21_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame22_01 || betgame22_02) !== "number") {
+        if ((betgame22_01 || betgame22_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame23_01 || betgame23_02) !== "number") {
+        if ((betgame23_01 || betgame23_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame24_01 || betgame24_02) !== "number") {
+        if ((betgame24_01 || betgame24_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame25_01 || betgame25_02) !== "number") {
+        if ((betgame25_01 || betgame25_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame26_01 || betgame26_02) !== "number") {
+        if ((betgame26_01 || betgame26_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame27_01 || betgame27_02) !== "number") {
+        if ((betgame27_01 || betgame27_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+      
+      if (typeof (betgame28_01 || betgame28_02) !== "number") {
+        if ((betgame28_01 || betgame28_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+      
+      if (typeof (betgame29_01 || betgame29_02) !== "number") {
+        if ((betgame29_01 || betgame29_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame30_01 || betgame30_02) !== "number") {
+        if ((betgame30_01 || betgame30_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame31_01 || betgame31_02) !== "number") {
+        if ((betgame31_01 || betgame31_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame32_01 || betgame32_02) !== "number") {
+        if ((betgame32_01 || betgame32_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame33_01 || betgame33_02) !== "number") {
+        if ((betgame33_01 || betgame33_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame34_01 || betgame34_02) !== "number") {
+        if ((betgame34_01 || betgame34_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame35_01 || betgame35_02) !== "number") {
+        if ((betgame35_01 || betgame35_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame36_01 || betgame36_02) !== "number") {
+        if ((betgame36_01 || betgame36_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame8_01 || betgame8_02) !== "number") {
+        if ((betgame36_01 || betgame36_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame37_01 || betgame37_02) !== "number") {
+        if ((betgame37_01 || betgame37_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame38_01 || betgame38_02) !== "number") {
+        if ((betgame38_01 || betgame38_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame39_01 || betgame39_02) !== "number") {
+        if ((betgame39_01 || betgame39_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame40_01 || betgame40_02) !== "number") {
+        if ((betgame40_01 || betgame40_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame41_01 || betgame41_02) !== "number") {
+        if ((betgame41_01 || betgame41_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame42_01 || betgame42_02) !== "number") {
+        if ((betgame42_01 || betgame42_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame43_01 || betgame43_02) !== "number") {
+        if ((betgame43_01 || betgame43_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame44_01 || betgame44_02) !== "number") {
+        if ((betgame44_01 || betgame44_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame45_01 || betgame45_02) !== "number") {
+        if ((betgame45_01 || betgame45_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame46_01 || betgame46_02) !== "number") {
+        if ((betgame46_01 || betgame46_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+
+      if (typeof (betgame47_01 || betgame47_02) !== "number") {
+        if ((betgame47_01 || betgame47_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      } 
+      
+      if (typeof (betgame48_01 || betgame48_02) !== "number") {
+        if ((betgame48_01 || betgame48_02) !== undefined) {
+          throw new RequestError("Parâmetro 'betgame' inválido: deve ser um número ou não informe nenhum valor.");
+        }
+      }
+      
 
     // **************************************************//
     
@@ -841,240 +564,299 @@ export class BetsBusiness {
 
     //Checagem do STATUS para saber se a partida está ENCERRADA e bloquear novas apostas e atualizações.
 
-    const checkStatus: any = await this.matchesDatabase.fetchAllMatches() 
+    const checkStatus: any = await this.matchesDatabase.fetchAllMatches()
     
-    const filterStatus = checkStatus.filter((result: any) => {
-      return result.matchstatus === STATUS.CLOSED 
+    const mapStatus: any = checkStatus.map((result: any) => {
+      return {id : result.id , matchstatus: result.matchstatus}
     })
-
-    for (let k = 0 ; k < filterStatus.length ; k++) {
+  
+          if (bet.getBet01_1() || bet.getBet01_2()) {
+            if (mapStatus[0].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
       
-      switch (filterStatus[k].id) {
-        case '01':
-          if (bet.getBet01_1() || bet.getBet01_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+          if (bet.getBet02_1() || bet.getBet02_2()) {
+            if (mapStatus[1].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '02':
-          if (bet.getBet02_1() || bet.getBet02_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet03_1() || bet.getBet03_2()) {
+            if (mapStatus[2].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '03':
-          if (bet.getBet03_1() || bet.getBet03_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet04_1() || bet.getBet04_2()) {
+            if (mapStatus[3].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '04':
-          if (bet.getBet04_1() || bet.getBet04_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet05_1() || bet.getBet05_2()) {
+            if (mapStatus[4].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '05':
-          if (bet.getBet05_1() || bet.getBet05_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet06_1() || bet.getBet06_2()) {
+            if (mapStatus[5].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '06':
-          if (bet.getBet06_1() || bet.getBet06_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet07_1() || bet.getBet07_2()) {
+            if (mapStatus[6].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '07':
-          if (bet.getBet07_1() || bet.getBet07_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet08_1() || bet.getBet08_2()) {
+            if (mapStatus[7].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '08':
-          if (bet.getBet08_1() || bet.getBet08_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet09_1() || bet.getBet09_2()) {
+            if (mapStatus[8].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '09':
-          if (bet.getBet09_1() || bet.getBet09_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet10_1() || bet.getBet10_2()) {
+            if (mapStatus[9].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '10':
-          if (bet.getBet10_1() || bet.getBet10_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet11_1() || bet.getBet11_2()) {
+            if (mapStatus[10].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '11':
-          if (bet.getBet11_1() || bet.getBet11_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+      
+          if (bet.getBet12_1() || bet.getBet12_2()) {
+            if (mapStatus[11].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
-        case '12':
-          if (bet.getBet12_1() || bet.getBet12_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '13':
-          if (bet.getBet13_1() || bet.getBet13_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '14':
-          if (bet.getBet14_1() || bet.getBet14_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '15':
-          if (bet.getBet15_1() || bet.getBet15_2() && filterStatus[k].matchstatus === STATUS.CLOSED ) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '16':
-          if (bet.getBet16_1() || bet.getBet16_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '17':
-          if (bet.getBet17_1() || bet.getBet17_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '18':
-          if (bet.getBet18_1() || bet.getBet18_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '19':
-          if (bet.getBet19_1() || bet.getBet19_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '20':
-          if (bet.getBet20_1() || bet.getBet20_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-          }
-        case '21':
-          if (bet.getBet21_1() || bet.getBet21_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '22':
-          if (bet.getBet22_1() || bet.getBet22_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '23':
-          if (bet.getBet23_1() || bet.getBet23_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '24':
-          if (bet.getBet24_1() || bet.getBet24_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '25':
-          if (bet.getBet25_1() || bet.getBet25_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '26':
-          if (bet.getBet26_1() || bet.getBet26_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '27':
-          if (bet.getBet27_1() || bet.getBet27_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '28':
-          if (bet.getBet28_1() || bet.getBet28_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '29':
-          if (bet.getBet29_1() || bet.getBet29_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '30':
-          if (bet.getBet30_1() || bet.getBet30_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '31':
-          if (bet.getBet31_1() || bet.getBet31_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '32':
-          if (bet.getBet32_1() || bet.getBet32_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '33':
-          if (bet.getBet33_1() || bet.getBet33_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '34':
-          if (bet.getBet34_1() || bet.getBet34_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '35':
-          if (bet.getBet35_1() || bet.getBet35_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '36':
-          if (bet.getBet36_1() || bet.getBet36_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '37':
-          if (bet.getBet37_1() || bet.getBet37_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '38':
-          if (bet.getBet38_1() || bet.getBet38_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '39':
-          if (bet.getBet39_1() || bet.getBet39_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '40':
-          if (bet.getBet40_1() || bet.getBet40_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '41':
-          if (bet.getBet41_1() || bet.getBet41_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '42':
-          if (bet.getBet42_1() || bet.getBet42_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '43':
-          if (bet.getBet43_1() || bet.getBet43_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '44':
-          if (bet.getBet44_1() || bet.getBet44_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '45':
-          if (bet.getBet45_1() || bet.getBet45_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '46':
-          if (bet.getBet46_1() || bet.getBet46_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '47':
-          if (bet.getBet47_1() || bet.getBet47_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
-          }
-        case '48':
-          if (bet.getBet48_1() || bet.getBet48_2() && filterStatus[k].matchstatus === STATUS.CLOSED) {
-            throw new ConflictError ("Um dos jogos está encerrado para apostas.")
-            break
+      
+          if (bet.getBet13_1() || bet.getBet13_2()) {
+            if (mapStatus[12].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
           }
 
-      }
+          if (bet.getBet14_1() || bet.getBet14_2()) {
+            if (mapStatus[13].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
 
-    }
+          if (bet.getBet15_1() || bet.getBet15_2()) {
+            if (mapStatus[14].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
 
+          if (bet.getBet16_1() || bet.getBet16_2()) {
+            if (mapStatus[15].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet17_1() || bet.getBet17_2()) {
+            if (mapStatus[16].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet18_1() || bet.getBet18_2()) {
+            if (mapStatus[17].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet19_1() || bet.getBet19_2()) {
+            if (mapStatus[18].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet20_1() || bet.getBet20_2()) {
+            if (mapStatus[19].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet21_1() || bet.getBet21_2()) {
+            if (mapStatus[20].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet22_1() || bet.getBet22_2()) {
+            if (mapStatus[21].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet23_1() || bet.getBet23_2()) {
+            if (mapStatus[22].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet24_1() || bet.getBet24_2()) {
+            if (mapStatus[23].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet25_1() || bet.getBet25_2()) {
+            if (mapStatus[24].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet26_1() || bet.getBet26_2()) {
+            if (mapStatus[25].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet27_1() || bet.getBet27_2()) {
+            if (mapStatus[26].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet28_1() || bet.getBet28_2()) {
+            if (mapStatus[27].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet29_1() || bet.getBet29_2()) {
+            if (mapStatus[28].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet30_1() || bet.getBet30_2()) {
+            if (mapStatus[29].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet31_1() || bet.getBet31_2()) {
+            if (mapStatus[30].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet32_1() || bet.getBet32_2()) {
+            if (mapStatus[31].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet33_1() || bet.getBet33_2()) {
+            if (mapStatus[32].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet34_1() || bet.getBet34_2()) {
+            if (mapStatus[33].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet35_1() || bet.getBet35_2()) {
+            if (mapStatus[34].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet36_1() || bet.getBet36_2()) {
+            if (mapStatus[35].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet37_1() || bet.getBet37_2()) {
+            if (mapStatus[36].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet38_1() || bet.getBet38_2()) {
+            if (mapStatus[37].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet39_1() || bet.getBet39_2()) {
+            if (mapStatus[38].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet40_1() || bet.getBet40_2()) {
+            if (mapStatus[39].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet41_1() || bet.getBet41_2()) {
+            if (mapStatus[40].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet42_1() || bet.getBet42_2()) {
+            if (mapStatus[41].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet43_1() || bet.getBet43_2()) {
+            if (mapStatus[42].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet44_1() || bet.getBet44_2()) {
+            if (mapStatus[43].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet45_1() || bet.getBet45_2()) {
+            if (mapStatus[44].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet46_1() || bet.getBet46_2()) {
+            if (mapStatus[45].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet47_1() || bet.getBet47_2()) {
+            if (mapStatus[46].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
+
+          if (bet.getBet48_1() || bet.getBet48_2()) {
+            if (mapStatus[47].matchstatus === STATUS.CLOSED) {
+              throw new ConflictError ("Um dos jogos está encerrado para apostas.")
+            }
+          }
 
     //Fazemos a checagem para saber se o usuário já criou o palpite para esse bolão.
     //Caso negativo, instanciamos o palipte, senão fazemos o Update.

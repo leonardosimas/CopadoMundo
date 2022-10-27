@@ -5,7 +5,9 @@ import { NotFoundError } from "../errors/NotFoundError"
 import { ParamsError } from "../errors/ParamsError"
 import { RequestError } from "../errors/RequestError"
 import { UnauthorizedError } from "../errors/UnauthorizedError"
-import { Group, ICreateGroupInputDTO, ICreateGroupOutputDTO } from "../models/Groups"
+import { Group, ICreateGroupInputDTO, ICreateGroupOutputDTO, IDeleteGroupOutputDTO } from "../models/Groups"
+import { USER_ROLES } from "../models/User"
+import { Authenticator, ITokenPayload } from "../services/Authenticator"
 import { IdGenerator } from "../services/IdGenerator"
 
 
@@ -14,7 +16,8 @@ export class GroupsBusiness {
     constructor(
         private groupsDatabase: GroupsDatabase,
         private userDatabase: UserDatabase,
-        private idGenerator: IdGenerator
+        private idGenerator: IdGenerator,
+        private authenticator: Authenticator
     ) {}
 
     public createGroup = async (input: ICreateGroupInputDTO): Promise<ICreateGroupOutputDTO> => {
@@ -42,8 +45,8 @@ export class GroupsBusiness {
         }
 
         const isGroupAlreadyExists = await this.groupsDatabase.fetchGroupByName(groupsname)
-        
-        if (isGroupAlreadyExists) {
+        console.log(groupsname)
+        if (isGroupAlreadyExists.length > 0) {
             throw new ConflictError(`Esse grupo ${groupsname} já foi criado.`)
         }
 
@@ -94,6 +97,32 @@ export class GroupsBusiness {
             }
         
         return result
+    }
+
+    public eraseGroup = async (token: string, user_id:string): Promise<IDeleteGroupOutputDTO> => {
+        
+        if (!token) {
+            throw new UnauthorizedError("Token inválido ou faltando");
+        }
+
+        const payload: ITokenPayload | any =  this.authenticator.getTokenPayload(token);
+
+        if (payload.role !== USER_ROLES.ADMIN) {
+            throw new UnauthorizedError("Somente ADMINS podem deletar um grupo.");
+        }
+
+        if (typeof user_id !== "string") {
+            throw new RequestError("Parâmetro 'user_id' inválido.")
+        }
+
+        const deleteGroup = await this.groupsDatabase.deleteGroup(user_id)
+                
+        console.log(user_id)
+
+        const response: IDeleteGroupOutputDTO = {
+            message: "Grupo deletado com sucesso."
+        }
+        return response
     }
 
 
