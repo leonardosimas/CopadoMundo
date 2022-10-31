@@ -177,9 +177,13 @@ export class UserBusiness {
         }
 
         const isUserExists: any = await this.userDatabase.findById(user_id)
-        
+
         if (!isUserExists) {
             throw new NotFoundError ("O usuário não foi encontrado.")
+        }
+
+        if (isUserExists.role === USER_ROLES.ADMIN) {
+            throw new ConflictError ("Você não pode deletar um ADMIN.")
         }
 
         const deleteBets = await this.betsDatabase.deleteBets(user_id)

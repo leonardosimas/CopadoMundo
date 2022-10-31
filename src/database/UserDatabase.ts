@@ -41,7 +41,7 @@ export class UserDatabase extends BaseDatabase {
     }
 
     public deleteUser = async (delUser: string): Promise<void> => {
-            console.log("Estou no deleteUser, userDatabase" , delUser)
+            
             await this.getConnection()(UserDatabase.TABLE_USERS)
             .delete()
             .where({id: delUser})

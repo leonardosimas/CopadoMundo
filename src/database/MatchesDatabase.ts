@@ -71,6 +71,7 @@ export class MatchesDatabase extends BaseDatabase {
     }
 
     public updateStatus = async (updateStatus: UpdateMatches): Promise<void> => {
+        
         const updateStatusDB = this.toUpdateMatchStatusDBModel(updateStatus)
         await this.getConnection()
             .update(updateStatusDB)

@@ -71,8 +71,6 @@ export class MatchesBusiness {
       );
     }
 
-    console.log(matchstatus)
-
     if (!matchstatus) {
       matchstatus = STATUS.CLOSED
     } else if (!Object.values(STATUS)?.includes(matchstatus)) {
@@ -86,7 +84,7 @@ export class MatchesBusiness {
     }
 
     const updateMatch = new UpdateMatches(id, matchstatus, scorecountry1, scorecountry2);
-
+    
     await this.matchesDatabase.updateMatches(updateMatch);
     const response: IUpdateMatchesOutputDTO = {
       message: "O placar do jogo foi atualizado.",
@@ -128,7 +126,7 @@ export class MatchesBusiness {
     if (!Object.values(STATUS)?.includes(matchstatus)) {
       throw new ParamsError ("O STATUS da partida só pode ser 'OPEN' ou 'CLOSED'.")
     }
-  
+    
     const updateStatus = new UpdateMatches(id, matchstatus);
 
     await this.matchesDatabase.updateStatus(updateStatus);

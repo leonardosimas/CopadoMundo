@@ -31,7 +31,7 @@ export class GroupsController {
     public getAllGroups = async (req: Request, res: Response) => {
         try {
             const response = await this.groupsBusiness.selectAllGroups()
-            console.log("response",response)
+            
             res.status(200).send({ Grupos: response });
 
         } catch (error: unknown) {

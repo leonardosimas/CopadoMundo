@@ -43,9 +43,8 @@ export class MatchesController {
                 scorecountry2
               };
         
-              
               const response = await this.matchesBusiness.updateMacth(input);
-              res.status(201).send(response);
+              res.status(200).send(response);
             } catch (error: any) {
               if (error instanceof BaseError) {
                 return res.status(error.statusCode).send({ message: error.message });
@@ -73,7 +72,7 @@ export class MatchesController {
       
             
             const response = await this.matchesBusiness.updateStatus(input);
-            res.status(201).send(response);
+            res.status(200).send(response);
           } catch (error: any) {
             if (error instanceof BaseError) {
               return res.status(error.statusCode).send({ message: error.message });

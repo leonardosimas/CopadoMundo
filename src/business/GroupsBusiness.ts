@@ -47,7 +47,7 @@ export class GroupsBusiness {
         }
 
         const isGroupAlreadyExists = await this.groupsDatabase.fetchGroupByName(groupsname)
-        console.log(groupsname)
+        
         if (isGroupAlreadyExists.length > 0) {
             throw new ConflictError(`Esse grupo ${groupsname} já foi criado.`)
         }
