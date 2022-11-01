@@ -1,4 +1,4 @@
-import { IUserDB, User } from "../models/User"
+import { IDeleteUserDB, IUserDB, User } from "../models/User"
 import { BaseDatabase } from "./BaseDatabase"
 
 export class UserDatabase extends BaseDatabase {
@@ -38,5 +38,12 @@ export class UserDatabase extends BaseDatabase {
 
         await this.getConnection()(UserDatabase.TABLE_USERS)
             .insert(userDB)
+    }
+
+    public deleteUser = async (delUser: string): Promise<void> => {
+            
+            await this.getConnection()(UserDatabase.TABLE_USERS)
+            .delete()
+            .where({id: delUser})
     }
 }

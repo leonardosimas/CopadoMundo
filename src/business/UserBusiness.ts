@@ -1,10 +1,12 @@
 import { UserDatabase } from "../database/UserDatabase"
+import { GroupsDatabase } from "../database/GroupsDatabase"
+import { BetsDatabase } from "../database/BetsDatabase"
 import { ConflictError } from "../errors/ConflictError"
 import { NotFoundError } from "../errors/NotFoundError"
 import { ParamsError } from "../errors/ParamsError"
 import { RequestError } from "../errors/RequestError"
 import { UnauthorizedError } from "../errors/UnauthorizedError"
-import { ILoginInputDTO, ILoginOutputDTO, ISignupInputDTO, ISignupOutputDTO, User, USER_ROLES } from "../models/User"
+import { IDeleteInputDTO, IDeleteOutputDTO, IDeleteUserDB, ILoginInputDTO, ILoginOutputDTO, ISignupInputDTO, ISignupOutputDTO, User, USER_ROLES } from "../models/User"
 import { Authenticator, ITokenPayload } from "../services/Authenticator"
 import { HashManager } from "../services/HashManager"
 import { IdGenerator } from "../services/IdGenerator"
@@ -12,6 +14,8 @@ import { IdGenerator } from "../services/IdGenerator"
 export class UserBusiness {
     constructor(
         private userDatabase: UserDatabase,
+        private groupsDatabase: GroupsDatabase,
+        private betsDatabase: BetsDatabase,
         private idGenerator: IdGenerator,
         private hashManager: HashManager,
         private authenticator: Authenticator
@@ -151,6 +155,44 @@ export class UserBusiness {
             token
         }
 
+        return response
+    }
+
+    public deleteUser = async (input: IDeleteInputDTO): Promise<IDeleteOutputDTO> => {
+        const { token, user_id} = input;
+        
+
+        if (!token) {
+            throw new UnauthorizedError("Token inválido ou faltando");
+        }
+
+        const payload: ITokenPayload | any =  this.authenticator.getTokenPayload(token);
+
+        if (payload.role !== USER_ROLES.ADMIN) {
+            throw new UnauthorizedError("Somente ADMINS podem deletar um usuário.");
+        }
+
+        if (typeof user_id !== "string") {
+            throw new RequestError("Parâmetro 'user_id' inválido.")
+        }
+
+        const isUserExists: any = await this.userDatabase.findById(user_id)
+
+        if (!isUserExists) {
+            throw new NotFoundError ("O usuário não foi encontrado.")
+        }
+
+        if (isUserExists.role === USER_ROLES.ADMIN) {
+            throw new ConflictError ("Você não pode deletar um ADMIN.")
+        }
+
+        const deleteBets = await this.betsDatabase.deleteBets(user_id)
+        const deleteGroup = await this.groupsDatabase.deleteGroup(user_id)
+        const deleteUser = await this.userDatabase.deleteUser(user_id)
+        
+        const response: IDeleteOutputDTO = {
+            message: "Usuário deletado com sucesso."
+        }
         return response
     }
 }

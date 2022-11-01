@@ -9,18 +9,26 @@ export enum MATCH_GROUP {
   H = "H",
 }
 
+export enum STATUS {
+  OPEN = "OPEN",
+  CLOSED = "CLOSED"
+}
+
+
 export interface IMatchesDB {
   id: string;
   country1: string;
   country2: string;
   dateOfGame: Date;
   matchgame: MATCH_GROUP;
+  matchstatus: STATUS;
 }
 
 export interface IUpdateMatchesDB {
   id: string,
   scorecountry1?: number;
   scorecountry2?: number;
+  matchstatus: STATUS;
 }
 
 export class Matches {
@@ -30,8 +38,7 @@ export class Matches {
     private country2: string,
     private dateOfGame: Date,
     private matchgame: MATCH_GROUP,
-    // private scorecountry1?: number,
-    // private scorecountry2?: number
+    private matchstatus: STATUS
   ) {}
 
   public getId = () => {
@@ -54,13 +61,9 @@ export class Matches {
     return this.matchgame;
   };
 
-  // public getScoreCountry1 = () => {
-  //   return this.scorecountry1;
-  // };
-
-  // public getScoreCountry2 = () => {
-  //   return this.scorecountry2;
-  // };
+  public getMatchstatus = () => {
+    return this.matchstatus;
+  };
 
   public setId = (newId: string) => {
     this.id = newId;
@@ -82,18 +85,15 @@ export class Matches {
     this.matchgame = newMatchgame;
   };
 
-  // public setScoreCountry1 = (newScoreCountry1: number) => {
-  //   this.scorecountry1 = newScoreCountry1;
-  // };
-
-  // public setScoreCountry2 = (newScoreCountry2: number) => {
-  //   this.scorecountry2 = newScoreCountry2;
-  // };
+  public settMatchstatus = (newMatchstatus: STATUS) => {
+    return this.matchstatus = newMatchstatus;
+  };
 }
 
 export class UpdateMatches {
   constructor(
     private id: string,
+    private matchstatus: STATUS,
     private scorecountry1?: number,
     private scorecountry2?: number
   ) {}
@@ -110,6 +110,10 @@ export class UpdateMatches {
     return this.scorecountry2;
   };
 
+  public getMatchstatus = () => {
+    return this.matchstatus;
+  };
+
   public setId = (newId: string) => {
     this.id = newId;
   };
@@ -121,15 +125,24 @@ export class UpdateMatches {
   public setScoreCountry2 = (newScoreCountry2: number) => {
     this.scorecountry2 = newScoreCountry2;
   };
+
+  public settMatchstatus = (newMatchstatus: STATUS) => {
+    return this.matchstatus = newMatchstatus;
+  };
 }
-
-
 
 export interface IUpdateMatchesInputDTO {
   token: string,
+  id: string,
+  matchstatus: STATUS,  
+  scorecountry1: number;
+  scorecountry2: number;
+}
+
+export interface IUpdateMatchStatusInputDTO {
+  token: string,
   id: string,  
-  scorecountry1: string;
-  scorecountry2: string;
+  matchstatus: STATUS
 }
 
 export interface IUpdateMatchesOutputDTO {

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { GroupsBusiness } from "../business/GroupsBusiness";
 import { BaseError } from "../errors/BaseError";
-import { ICreateGroupInputDTO } from "../models/Groups";
+import { ICreateGroupInputDTO, IDeleteGroupInputDTO } from "../models/Groups";
 
 
 export class GroupsController {
@@ -31,7 +31,7 @@ export class GroupsController {
     public getAllGroups = async (req: Request, res: Response) => {
         try {
             const response = await this.groupsBusiness.selectAllGroups()
-            console.log("response",response)
+            
             res.status(200).send({ Grupos: response });
 
         } catch (error: unknown) {
@@ -55,4 +55,25 @@ export class GroupsController {
         }
     };
     
+    public deleteGroup = async (req: Request, res: Response) => {
+        try {
+            const token = req.headers.authorization as string
+            const group_id = req.params.id as string  
+                        
+            const input: IDeleteGroupInputDTO = {
+              token,
+              group_id
+            };
+
+            const response = await this.groupsBusiness.eraseGroup(input)
+            res.status(200).send(response)
+        } catch (error: unknown) {
+            if (error instanceof BaseError) {
+                return res.status(error.statusCode).send({ message: error.message })
+            }
+
+            res.status(500).send({ message: "Erro inesperado ao deletar o grupo." })
+        }
+    }
+
 }

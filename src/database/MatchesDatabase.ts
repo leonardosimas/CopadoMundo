@@ -10,7 +10,8 @@ export class MatchesDatabase extends BaseDatabase {
             country1: matches.getCountry1(),
             country2: matches.getCountry2(),
             dateOfGame: matches.getDateOfGame(),
-            matchgame: matches.getMatchgame()
+            matchgame: matches.getMatchgame(),
+            matchstatus: matches.getMatchstatus()
         }
 
         return matchesDB
@@ -19,11 +20,21 @@ export class MatchesDatabase extends BaseDatabase {
     public toUpdateMatchesDBModel = (matches: UpdateMatches): IUpdateMatchesDB => {
         const matchesDB: IUpdateMatchesDB = {
             id: matches.getId(),
+            matchstatus: matches.getMatchstatus(),
             scorecountry1: matches.getScoreCountry1(),
             scorecountry2: matches.getScoreCountry2()
         }
 
         return matchesDB
+    }
+
+    public toUpdateMatchStatusDBModel = (status: UpdateMatches): IUpdateMatchesDB => {
+        const statusDB: IUpdateMatchesDB = {
+            id: status.getId(),
+            matchstatus:status.getMatchstatus()
+        }
+
+        return statusDB
     }
 
     public createMatches = async (matches: Matches): Promise<void> => {
@@ -59,5 +70,13 @@ export class MatchesDatabase extends BaseDatabase {
             
     }
 
-
+    public updateStatus = async (updateStatus: UpdateMatches): Promise<void> => {
+        
+        const updateStatusDB = this.toUpdateMatchStatusDBModel(updateStatus)
+        await this.getConnection()
+            .update(updateStatusDB)
+            .into(MatchesDatabase.TABLE_MATCHES)
+            .where({id : updateStatusDB.id})
+            
+    }
 }

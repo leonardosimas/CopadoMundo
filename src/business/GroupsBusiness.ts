@@ -1,3 +1,4 @@
+import { BetsDatabase } from "../database/BetsDatabase"
 import { GroupsDatabase } from "../database/GroupsDatabase"
 import { UserDatabase } from "../database/UserDatabase"
 import { ConflictError } from "../errors/ConflictError"
@@ -5,7 +6,9 @@ import { NotFoundError } from "../errors/NotFoundError"
 import { ParamsError } from "../errors/ParamsError"
 import { RequestError } from "../errors/RequestError"
 import { UnauthorizedError } from "../errors/UnauthorizedError"
-import { Group, ICreateGroupInputDTO, ICreateGroupOutputDTO } from "../models/Groups"
+import { Group, ICreateGroupInputDTO, ICreateGroupOutputDTO, IDeleteGroupInputDTO, IDeleteGroupOutputDTO } from "../models/Groups"
+import { USER_ROLES } from "../models/User"
+import { Authenticator, ITokenPayload } from "../services/Authenticator"
 import { IdGenerator } from "../services/IdGenerator"
 
 
@@ -13,8 +16,10 @@ import { IdGenerator } from "../services/IdGenerator"
 export class GroupsBusiness {
     constructor(
         private groupsDatabase: GroupsDatabase,
+        private betsDatabase: BetsDatabase,
         private userDatabase: UserDatabase,
-        private idGenerator: IdGenerator
+        private idGenerator: IdGenerator,
+        private authenticator: Authenticator
     ) {}
 
     public createGroup = async (input: ICreateGroupInputDTO): Promise<ICreateGroupOutputDTO> => {
@@ -43,7 +48,7 @@ export class GroupsBusiness {
 
         const isGroupAlreadyExists = await this.groupsDatabase.fetchGroupByName(groupsname)
         
-        if (isGroupAlreadyExists) {
+        if (isGroupAlreadyExists.length > 0) {
             throw new ConflictError(`Esse grupo ${groupsname} já foi criado.`)
         }
 
@@ -94,6 +99,40 @@ export class GroupsBusiness {
             }
         
         return result
+    }
+
+    public eraseGroup = async (input: IDeleteGroupInputDTO): Promise<IDeleteGroupOutputDTO> => {
+        
+        const token = input.token as string
+        const group_id = input.group_id as string
+
+        if (!token) {
+            throw new UnauthorizedError("Token inválido ou faltando");
+        }
+
+        const payload: ITokenPayload | any =  this.authenticator.getTokenPayload(token);
+
+        if (payload.role !== USER_ROLES.ADMIN) {
+            throw new UnauthorizedError("Somente ADMINS podem deletar um grupo.");
+        }
+
+        if (typeof group_id !== "string") {
+            throw new RequestError("Parâmetro 'user_id' inválido.")
+        }
+
+        const isGroupExists: any = await this.groupsDatabase.findById(group_id)
+        
+        if (!isGroupExists) {
+            throw new NotFoundError ("O grupo não foi encontrado.")
+        }
+
+        const deleteBets = await this.betsDatabase.deleteBetsByGroupId(group_id)
+        const deleteGroup = await this.groupsDatabase.deleteGroupById(group_id)
+        
+        const response: IDeleteGroupOutputDTO = {
+            message: "Grupo deletado com sucesso."
+        }
+        return response
     }
 
 

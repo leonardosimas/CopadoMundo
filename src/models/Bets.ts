@@ -5,7 +5,7 @@ export interface IBetsDB extends IUpdateBetsDB{
 
 export interface IUpdateBetsDB {
   // id: string;
-  
+  user_id: string,
   betgame1_01?: number;
   betgame1_02?: number;
   betgame2_01?: number;

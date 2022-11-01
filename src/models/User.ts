@@ -13,6 +13,11 @@ export interface IUserDB {
     role: USER_ROLES
 }
 
+export interface IDeleteUserDB {
+    id: string, 
+    user_id: string
+}
+
 export class User {
     constructor(
         private id: string,
@@ -93,4 +98,13 @@ export interface ILoginInputDTO {
 export interface ILoginOutputDTO {
     message: string,
     token: string
+}
+
+export interface IDeleteInputDTO {
+    token: string,
+    user_id: string
+}
+
+export interface IDeleteOutputDTO {
+    message: string,
 }

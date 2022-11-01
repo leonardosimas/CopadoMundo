@@ -11,7 +11,7 @@ export class BetsDatabase extends BaseDatabase {
     public toUpdateBetDBModel = (bet: Bets): IUpdateBetsDB => {
         const updateBetDB: IUpdateBetsDB = {
             // id: bet.getId(),
-            // user_id: bet.getUser_id(),
+            user_id: bet.getUser_id(),
             // group_id: bet.getGroup_id(),
             betgame1_01: bet.getBet01_1(),
             betgame1_02: bet.getBet01_2(),
@@ -117,7 +117,6 @@ export class BetsDatabase extends BaseDatabase {
 
     public toBetDBModel = (bet: Bets): IBetsDB => {
         const betDB: IBetsDB = {
-            // id: bet.getId(),
             user_id: bet.getUser_id(),
             group_id: bet.getGroup_id(),
             betgame1_01: bet.getBet01_1(),
@@ -243,6 +242,7 @@ export class BetsDatabase extends BaseDatabase {
 
         await this.getConnection()(BetsDatabase.TABLE_BETS)
             .insert(betDB)
+            
     }
 
     public updateBet = async (updateBet: Bets): Promise<void> => {
@@ -250,6 +250,7 @@ export class BetsDatabase extends BaseDatabase {
 
         await this.getConnection()(BetsDatabase.TABLE_BETS)
             .update(updateBetDB)
+            .where({user_id : updateBet.getUser_id()})
             
     }
     public fetchGroupBets = async (id: string): Promise<IBetsDB | undefined> => {
@@ -265,6 +266,18 @@ export class BetsDatabase extends BaseDatabase {
         return result[0]
     }
 
-    
+    public deleteBets = async (delBets: string): Promise<void> => {
+        
+        await this.getConnection()(BetsDatabase.TABLE_BETS)
+        .delete()
+        .where({user_id: delBets})
+    }
+
+    public deleteBetsByGroupId = async (delBets: string): Promise<void> => {
+        
+        await this.getConnection()(BetsDatabase.TABLE_BETS)
+        .delete()
+        .where({group_id: delBets})
+    }
 
 }
